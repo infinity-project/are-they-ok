@@ -20,7 +20,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/1.9/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'lm%a6@r92=xa%*3_t%&zye*wvej=d9bymryapvynr!ccyj_7pm'
+SECRET_KEY = 'no'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -42,8 +42,8 @@ INSTALLED_APPS = [
 ]
 
 STREAM_API_KEY = 'pjtmz6uavyrh'
-STREAM_API_SECRET = ''
-# no secret key for you
+STREAM_API_SECRET = 'no'
+
 MIDDLEWARE_CLASSES = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
