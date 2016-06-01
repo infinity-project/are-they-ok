@@ -9,7 +9,7 @@ from stream_django.activity import Activity
 
 class Update(models.Model, Activity):
 	created_at = models.DateTimeField(auto_now_add=True)
-	client = models.ForeignKey(User, default='Boundarybreaker')
+	client = models.ForeignKey(User)
 	
 	@property
 	def activity_actor_attr(self):
