@@ -1,19 +1,19 @@
 from django.shortcuts import render
 from django.views.generic.edit import CreateView
-from feed.models import Follow
-from feed.models import Update
+from stream.twitter.models import Follow
+from stream.twitter.models import Tweet
 from django.contrib.auth.models import User
 from stream_django.enrich import Enrich
 from stream_django.feed_manager import feed_manager
 
 # Create your views here.
-class UpdateView(CreateView):
-	model = Update
+class TweetView(CreateView):
+	model = Tweet
 	fields = ['text']
 	
 	def form_valid(self.form):
 		form.instance.user = self.request.user
-		return super(Update, self).form_valid(form)
+		return super(Tweet, self).form_valid(form)
 
 def profile_feed(request, username=None):
 	enricher = Enrich()
@@ -24,7 +24,7 @@ def profile_feed(request, username=None):
 	context = {
 		'activities': activities
 	}
-	return render(request, 'updates.html', context)
+	return render(request, 'tweets.html', context)
 
 class FollowView(CreateView):
 	model = Follow

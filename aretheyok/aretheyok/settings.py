@@ -32,7 +32,8 @@ ALLOWED_HOSTS = []
 
 INSTALLED_APPS = [
 	'stream_django',
-	'feed.apps.FeedConfig',
+	'stream_twitter',
+	'feed',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -43,6 +44,7 @@ INSTALLED_APPS = [
 
 STREAM_API_KEY = 'pjtmz6uavyrh'
 STREAM_API_SECRET = 'no'
+STREAM_NEWS_FEEDS = dict(flat='flat')
 
 MIDDLEWARE_CLASSES = [
     'django.middleware.security.SecurityMiddleware',

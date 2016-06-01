@@ -15,9 +15,13 @@ Including another URLconf
 """
 from django.conf.urls import include, url
 from django.contrib import admin
+from django.contrib.auth.decorators import login_required
+from feed import views
+from stream_twitter import views
 
 urlpatterns = [
 	url(r'^feed/', include('feed.urls')),
     url(r'^admin/', admin.site.urls),
     url('^', include('django.contrib.auth.urls')),
+    url(r'^update/', login_required(views.UpdateView.as_view()))
 ]
