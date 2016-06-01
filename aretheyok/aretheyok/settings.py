@@ -42,8 +42,8 @@ INSTALLED_APPS = [
 ]
 
 STREAM_API_KEY = 'pjtmz6uavyrh'
-STREAM_API_SECRET = 'nntudzatbxh4ajw7x8eg74yuf6mztmeuyw34uu6b2sm3jzgwf6h5uk4kaqc853vx'
-
+STREAM_API_SECRET = ''
+# no secret key for you
 MIDDLEWARE_CLASSES = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
