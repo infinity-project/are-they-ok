@@ -1,0 +1,14 @@
+{% load staticfiles %}
+
+<!DOCTYPE html>
+<head>
+	<link href='https://fonts.googleapis.com/css?family=Lato&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" type="text/css" href="{% static 'feed/style.css' %}" />
+</head>
+<body>
+<ul class="nav">
+        <li><h1>Are They OK?</h1></li>
+        <li><a href="{% url 'feed:index' %}">Home</a></li>
+        <li><a >Networks</a></li>
+    </ul>
+</body>

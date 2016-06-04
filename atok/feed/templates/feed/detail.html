@@ -1,0 +1,11 @@
+{% load staticfiles %}
+<link rel="stylesheet" type="text/css" href="{% static 'feed/style.css' %}" />
+<h1>{{ update.user }} is {{ update.update_text }}</h1>
+
+<ul>
+{% for verify in update.verify_set.all %}
+    <li>{{ verify.level }} -- {{ verify.affirmations }} affirmation{{ verify.affirmations|pluralize }}</li>
+{% endfor %}
+</ul>
+
+<a href="{% url 'feed:verify' update.id %}">Verify</a>

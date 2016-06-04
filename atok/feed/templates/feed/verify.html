@@ -1,0 +1,15 @@
+{% load staticfiles %}
+<link rel="stylesheet" type="text/css" href="{% static 'feed/style.css' %}" />
+<h1>{{ update.user }} is {{ update.update_text }}</h1>
+
+{% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
+
+<form action="{% url 'feed:verify' update.id %}" method="post">
+{% csrf_token %}
+{% for verify in update.verify_set.all %}
+	<input type="radio" name="verify" id="verify{{ forloop.counter }}" value="{{verify.id }}" />
+	<label for="verify{{ forloop.counter }}">{{ verify.level }}</label>
+<br />
+{% endfor %}
+<input type="submit" value="Verify" />
+</form>
