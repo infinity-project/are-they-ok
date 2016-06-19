@@ -3,9 +3,11 @@ from django.http import HttpResponse, HttpResponseRedirect
 from django.contrib.auth.models import User
 from django.core.urlresolvers import reverse
 from django.views import generic
+from django.contrib.auth.decorators import login_required
 
 
 from .models import Update, Verify
+from .forms import UpdateForm
 
 # Create your views here.
 class IndexView(generic.ListView):
@@ -43,3 +45,25 @@ def index_user(request, username):
         'updates': updates,
         'reason': "Viewing all of {}'s updates".format(username)
     })
+
+@login_required
+def post_update(request):
+	if request.method == 'POST':
+		form = UpdateForm(request.POST)
+		if form.is_valid():
+			return render(request, 'feed:detail')
+	else:
+		form = UpdateForm()
+	
+	return render(request, 'feed/create.html', {'form': form})
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		

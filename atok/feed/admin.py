@@ -10,6 +10,7 @@ class VerifyInline(admin.TabularInline):
 class UpdateDebug(admin.ModelAdmin):
 	fieldsets = [
 		(None, {'fields': ['update_text']}),
+		(None, {'fields': ['user']}),
 		('Date information', {'fields': ['pub_date'], 'classes': ['collapse']}),
 		]
 	inlines = [VerifyInline]

@@ -9,4 +9,5 @@ urlpatterns = [
  	url(r'^user/(?P<pk>[0-9]+)/feed/$', views.index_user, name='index_user'),
     url(r'^(?P<pk>[0-9]+)/$', views.DetailView.as_view(), name='detail'),
     url(r'^(?P<update_id>[0-9]+)/verify/$', views.verify, name='verify'),
+    url(r'^update/$', views.post_update, name='post'),
 ]
